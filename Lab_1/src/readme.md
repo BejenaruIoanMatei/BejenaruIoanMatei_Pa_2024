@@ -24,7 +24,17 @@ conectate la hub. La fel se conecteaza nodurile exterioare
 intre ele pentru a forma un ciclu. La final 
 se adauga o muchie intre primul nod si ultimul
 pentru a inchide ciclul. Se returneaza matricea de adiacenta
-rezultata.
+rezultata. Numarul total de cicluri poate fi calculat
+intr-o variabila astfel : (n-2)(n-1)+1 . Avem un ciclu care
+nu trece prin centru(hub), adica +1 . Restul de 
+cicluri trec prin centru si trebuie sa 
+alegem doua noduri care trec prin hub, deci
+avem combinari de (n-1) luate cate 2 -> alegeri.
+Si pentru fiecare pereche de genul asta avem
+doua alegeri : prima ia calea de sus si a doua
+calea de jos . Asadar avem 2*(combinari (n-1) luate cate 2) + 1. 
+Facand calculul obtinem 2 * ((n-2)(n-1))/2 + 1 =
+(n-2)(n-1)+1.
 
 
 
