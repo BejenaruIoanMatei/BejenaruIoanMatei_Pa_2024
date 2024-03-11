@@ -1,35 +1,50 @@
-public class Vehicle {
-    private String vehicleName;
-    private Depot depot;
+public abstract class Vehicle {
+    protected String vehicleName;
+    private Tour tour;
+
     //Constructor
-    public Vehicle(String name, Depot depot)
+
+    public Vehicle()
+    {
+        //vehicleName va fi null la fel si drumul
+    }
+    public Vehicle(String name, Tour tour)
     {
         this.vehicleName = name;
-        this.depot = depot;
+        this.tour = tour;
     }
 
-    //Setters
-    public void setVehicleName(String name)
-    {
-        this.vehicleName = name;
-    }
-    public void setDepot(Depot depot)
-    {
-        this.depot = depot;
-    }
-    //Getters
-    public String getVehicleName()
-    {
+    public String getVehicleName() {
         return vehicleName;
     }
-    public Depot getDepot()
-    {
-        return depot;
+
+    public void setVehicleName(String vehicleName) {
+        this.vehicleName = vehicleName;
     }
+
+    public Tour getTour() {
+        return tour;
+    }
+
+    public void setTour(Tour tour) {
+        this.tour = tour;
+    }
+
 
     @Override
     public String toString()
     {
-        return "Vehicle : "+ vehicleName+ ',' + depot;
+        return "Vehicle : "+ vehicleName+ ',' + tour;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(obj == null || !(obj instanceof Vehicle))
+        {
+            return false;
+        }
+        Vehicle other = (Vehicle) obj;
+        return vehicleName.equals(other.vehicleName);
     }
 }

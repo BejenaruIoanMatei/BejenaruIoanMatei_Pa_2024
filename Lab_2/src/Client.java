@@ -7,14 +7,17 @@ public class Client {
     private String clientName;
     private String timeInterval;
     private tipClient clientType;
+    private boolean hasVehicle;
 
     //Constructorul pentru Client
-    public Client(String name, String time,tipClient type)
+    public Client(String name, String time,tipClient type,boolean hasVehicle)
     {
         this.clientName = name;
         this.timeInterval = time;
         this.clientType = type;
+        this.hasVehicle = hasVehicle;
     }
+
 
     //Setters
     public void setClientName(String name)
@@ -28,6 +31,9 @@ public class Client {
     public void setClientType(tipClient type)
     {
         this.clientType = type;
+    }
+    public void setHasVehicle(boolean hasVehicle) {
+        this.hasVehicle = hasVehicle;
     }
 
     //Getters
@@ -44,6 +50,12 @@ public class Client {
     {
         return clientType;
     }
+    public boolean isHasVehicle()
+    {
+        return hasVehicle;
+    }
+
+
     //toString
     @Override
     public String toString()
@@ -52,5 +64,14 @@ public class Client {
                 ", tip client "+ clientType;
 
     }
-
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(obj == null || !(obj instanceof Client))
+        {
+            return false;
+        }
+        Client other = (Client) obj;
+        return clientName.equals(other.clientName);
+    }
 }
