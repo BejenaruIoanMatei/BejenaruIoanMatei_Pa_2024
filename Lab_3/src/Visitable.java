@@ -1,10 +1,8 @@
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+import java.util.Map;
 
 public interface Visitable {
-    Map<LocalDate, TimeInterval> getTimetable();
-    default void getOpeningHour(LocalDate date)
-    {
-
-    }
-
+    Map<String, List<String>> getOpeningHours ();
 }

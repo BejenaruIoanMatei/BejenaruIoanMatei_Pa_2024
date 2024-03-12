@@ -8,18 +8,35 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * The type Problem.
+ */
 public class Problem {
     private ArrayList<Depot> depots;
     private ArrayList<Client> clients;
     private ArrayList<Vehicle> vehicles;
+    /**
+     * The Travel times.
+     */
     int[][] travelTimes;
 
+    /**
+     * Instantiates a new Problem.
+     *
+     * @param vehicles the vehicles
+     */
     public Problem(ArrayList<Vehicle> vehicles) {
         this.depots = new ArrayList<>();
         this.clients = new ArrayList<>();
         this.vehicles = vehicles;
     }
 
+    /**
+     * Instantiates a new Problem.
+     *
+     * @param depots  the depots
+     * @param clients the clients
+     */
     public Problem(ArrayList<Depot> depots, ArrayList<Client> clients) {
         this.depots = depots;
         this.clients = clients;
@@ -28,23 +45,49 @@ public class Problem {
     //Setters n getters
 
 
+    /**
+     * Gets depots.
+     *
+     * @return the depots
+     */
     public ArrayList<Depot> getDepots() {
         return depots;
     }
 
+    /**
+     * Sets depots.
+     *
+     * @param depots the depots
+     */
     public void setDepots(ArrayList<Depot> depots) {
         this.depots = depots;
     }
 
+    /**
+     * Gets clients.
+     *
+     * @return the clients
+     */
     public ArrayList<Client> getClients() {
         return clients;
     }
 
+    /**
+     * Sets clients.
+     *
+     * @param clients the clients
+     */
     public void setClients(ArrayList<Client> clients) {
         this.clients = clients;
     }
 
 
+    /**
+     * Add depot boolean.
+     *
+     * @param depot the depot
+     * @return the boolean
+     */
     public boolean addDepot(Depot depot) {
         for (Depot d : depots) {
             if (d.equals(depot)) {
@@ -55,6 +98,12 @@ public class Problem {
         return true;
     }
 
+    /**
+     * Add client boolean.
+     *
+     * @param client the client
+     * @return the boolean
+     */
     public boolean addClient(Client client) {
         for (Client c : clients) {
             if (c.equals(client)) {
@@ -65,6 +114,12 @@ public class Problem {
         return true;
     }
 
+    /**
+     * Add vehicles boolean.
+     *
+     * @param vehicle the vehicle
+     * @return the boolean
+     */
     public boolean addVehicles(Vehicle vehicle) {
         if (vehicle == null)
         {
@@ -80,6 +135,11 @@ public class Problem {
     }
 
 
+    /**
+     * Get vehicles vehicle [ ].
+     *
+     * @return the vehicle [ ]
+     */
     public Vehicle[] getVehicles() {
         ArrayList<Vehicle> allVehicles = new ArrayList<>();
         for (Depot d : depots) {
@@ -90,6 +150,11 @@ public class Problem {
         return allVehicles.toArray(new Vehicle[0]);
     }
 
+    /**
+     * Solve problem.
+     *
+     * @param problem the problem
+     */
     public void solveProblem(Problem problem)
     {
         generateTravelTimesRandomly();
@@ -108,13 +173,18 @@ public class Problem {
                 {
                     tour.addClient(closestClient);
                     unvisitedClients.remove(closestClient);
-                    System.out.println("Clientul " + client + " merge cu "+ vehicle);
                 }
             }
             tours.add(tour);
         }
     }
 
+    /**
+     * Gets closest unvisited client.
+     *
+     * @param client the client
+     * @return the closest unvisited client
+     */
     public Client getClosestUnvisitedClient(Client client)
     {
         int indexClient = clients.indexOf(client);
