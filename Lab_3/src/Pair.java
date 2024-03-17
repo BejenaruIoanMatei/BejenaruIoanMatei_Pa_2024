@@ -42,6 +42,5 @@ public class Pair<T, U> {
     public int hashCode() {
         return Objects.hash(first, second);
     }
-
 }
 

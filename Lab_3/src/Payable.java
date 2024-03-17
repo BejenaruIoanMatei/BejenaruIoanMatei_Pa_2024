@@ -1,3 +1,3 @@
 public interface Payable {
-    float howMuch();
+    float getEntryFee();
 }

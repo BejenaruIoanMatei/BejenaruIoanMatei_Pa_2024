@@ -4,5 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 public interface Visitable {
-    Map<String, List<String>> getOpeningHours ();
+    Map<LocalDate, TimeInterval> getTimetable();
+    default LocalTime getOpeningHour (LocalDate date)
+    {
+        TimeInterval hours = getTimetable().get(date);
+        return hours.getFirst();
+    }
 }
