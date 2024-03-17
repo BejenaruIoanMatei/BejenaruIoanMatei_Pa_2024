@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 
-public class Compulsory
+public class Homework
 {
     public static void main(String[] args)
     {
