@@ -57,7 +57,7 @@ class Trip {
                 }
             }
         }
-        //noi stim ca atractiile a1 si a2 implementeaza interfata Visitable
+        //atractiile a1 si a2 implementeaza interfata Visitable
         atractiiGratis.sort((a1, a2) ->
         {
             LocalDate ziuaDeAzi = LocalDate.now();

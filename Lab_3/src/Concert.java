@@ -2,7 +2,7 @@ import java.time.*;
 import java.util.Map;
 
 class Concert extends Attraction implements Visitable, Payable {
-    private Map<LocalDate, TimeInterval> openingHours; // Use LocalDate and TimeInterval
+    private Map<LocalDate, TimeInterval> openingHours;
     private float entryFee;
 
     public Concert(String name, Map<LocalDate, TimeInterval> openingHours, float entryFee) {

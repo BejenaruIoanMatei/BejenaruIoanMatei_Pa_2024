@@ -37,10 +37,5 @@ public class Pair<T, U> {
         Pair<?, ?> pair = (Pair<?, ?>) o;
         return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(first, second);
-    }
 }
 
