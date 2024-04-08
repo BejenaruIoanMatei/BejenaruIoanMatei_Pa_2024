@@ -1,36 +1,50 @@
 package org.example;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
 
-public class ConfigPanel<MainFrame> extends JPanel {
-    final MainFrame frame;
-    JLabel label;
-    JSpinner sidesField;
-    JComboBox colorCombo;
+public class ConfigPanel extends JPanel {
+    private final MainFrame frame;
+    private final JLabel rowsLabel;
+    private final JSpinner rowsSpinner;
+    private final JLabel colsLabel;
+    private final JSpinner colsSpinner;
 
     public ConfigPanel(MainFrame frame) {
         this.frame = frame;
+        this.rowsLabel = new JLabel("Rows:");
+        this.rowsSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 100, 1));
+        this.colsLabel = new JLabel("Cols:");
+        this.colsSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 100, 1));
+
         init();
     }
+
     private void init() {
-        //create the label and the spinner
-        JLabel sidesLabel = new JLabel("Grid size:");
-        sidesField = new JSpinner(new SpinnerNumberModel(0, 0, 100, 1));
-        sidesField = new JSpinner(new SpinnerNumberModel(0, 0, 100, 1));
-        sidesField.setValue(10);
-        sidesField.setValue(10);
-        String values[]={"Red","Blue"};
-        colorCombo= new JComboBox(values);
+        add(rowsLabel);
+        add(rowsSpinner);
+        add(colsLabel);
+        add(colsSpinner);
 
-        //TODO
-        add(sidesLabel);
-        add(sidesField);
-        add(colorCombo);
+        // Adăugăm un ChangeListener pentru a detecta schimbările și a actualiza DrawingPanel
+        rowsSpinner.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int rows = (int) rowsSpinner.getValue();
+                int cols = (int) colsSpinner.getValue();
+                frame.getCanvas().setGridSize(rows, cols);
+            }
+        });
+
+        colsSpinner.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int rows = (int) rowsSpinner.getValue();
+                int cols = (int) colsSpinner.getValue();
+                frame.getCanvas().setGridSize(rows, cols);
+            }
+        });
     }
-
-    protected int getSidesValue(){
-        return (Integer)sidesField.getValue();
-    }
-
-
 }

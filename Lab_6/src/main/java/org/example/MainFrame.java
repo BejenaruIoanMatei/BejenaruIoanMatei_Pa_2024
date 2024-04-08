@@ -1,10 +1,7 @@
 package org.example;
 
 import javax.swing.*;
-
 import java.awt.*;
-
-import static java.awt.BorderLayout.CENTER;
 
 public class MainFrame extends JFrame {
     protected ConfigPanel configPanel;
@@ -12,34 +9,32 @@ public class MainFrame extends JFrame {
     private DrawingPanel canvas;
 
     public MainFrame() {
-        super("My Drawing Application");
+        super("Positional Game");
         init();
     }
 
-    public ConfigPanel getConfigPanel() {
-        return configPanel;
-    }
-
-    public ControlPanel getControlPanel() {
-        return controlPanel;
-    }
-
-    public DrawingPanel getCanvas() {
-        return canvas;
-    }
-
-    private void init()
-    {
+    private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
-        canvas = new DrawingPanel(this,10,10);
+        canvas = new DrawingPanel(5, 5);
         controlPanel = new ControlPanel(this);
         configPanel = new ConfigPanel(this);
 
-        add(canvas, BorderLayout.CENTER);
+        // Creăm un JPanel pentru a centra DrawingPanel
+        JPanel centerPanel = new JPanel(new GridBagLayout());
+        centerPanel.add(canvas);
+
+        add(centerPanel, BorderLayout.CENTER);
         add(configPanel, BorderLayout.NORTH);
-        add(controlPanel,BorderLayout.SOUTH);
+        add(controlPanel, BorderLayout.SOUTH);
 
         pack();
+        setLocationRelativeTo(null); // Centrăm fereastra pe ecran
+    }
+
+
+    public DrawingPanel getCanvas() {
+        return canvas;
     }
 }
