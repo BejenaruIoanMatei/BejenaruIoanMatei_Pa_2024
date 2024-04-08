@@ -27,12 +27,12 @@ public class Game implements Serializable {
     }
 
     private void generateSticks() {
-        // Generate random sticks and place them on the board
         Random random = new Random();
         for (int i = 0; i < rows * cols; i++) {
             int row = random.nextInt(rows);
             int col = random.nextInt(cols);
-            stones.add(new Stone(row, col, Color.BLACK));
+            Color color = (random.nextBoolean()) ? Color.RED : Color.BLUE; // Alternăm între roșu și albastru
+            stones.add(new Stone(row, col, color));
         }
     }
 
@@ -44,7 +44,8 @@ public class Game implements Serializable {
 
     public void makeMove(int row, int col) {
         if (!gameOver && isValidMove(row, col)) {
-            stones.add(new Stone(row, col, turn));
+            Color stoneColor = (turn == Color.RED) ? Color.RED : Color.BLUE;
+            stones.add(new Stone(row, col, stoneColor));
             switchTurn();
             checkWinner();
         }

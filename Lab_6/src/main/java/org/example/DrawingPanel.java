@@ -138,4 +138,13 @@ public class DrawingPanel extends JPanel {
             return color;
         }
     }
+
+    public int getCellWidth() {
+        return getWidth() / cols;
+    }
+
+    public int getCellHeight() {
+        return getHeight() / rows;
+    }
+
 }
