@@ -5,6 +5,7 @@ import org.example.MainFrame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -29,6 +30,7 @@ public class ControlPanel extends JPanel {
         add(saveBtn);
         add(exitBtn);
 
+        saveBtn.addActionListener(this::save);
         loadBtn.addActionListener(this::load);
         exitBtn.addActionListener(this::exit);
     }
@@ -43,6 +45,18 @@ public class ControlPanel extends JPanel {
             // frame.repaint();
         } catch (IOException ex) {
             System.err.println(ex);
+        }
+    }
+
+    private void save(ActionEvent e) {
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showSaveDialog(this);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String fileName = selectedFile.getAbsolutePath();
+
+            // Call the exportGameBoardImage method of the canvas to save the image
+            frame.getCanvas().exportGameBoardImage(fileName);
         }
     }
 
