@@ -38,24 +38,20 @@ public class ControlPanel extends JPanel {
     private void load(ActionEvent e) {
         try {
             URL url = new URL("");
-            // Use the URL to load image
-            // BufferedImage img = ImageIO.read(url);
-            // frame.getCanvas().reset();
-            // frame.getCanvas().setImage(img);
-            // frame.repaint();
+            //Aici vine partea de load a unei imagini in tabla de joc
         } catch (IOException ex) {
             System.err.println(ex);
         }
     }
 
     private void save(ActionEvent e) {
+
         JFileChooser fileChooser = new JFileChooser();
         int returnValue = fileChooser.showSaveDialog(this);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
             String fileName = selectedFile.getAbsolutePath();
-
-            // Call the exportGameBoardImage method of the canvas to save the image
+            //Pentru a salva imaginea
             frame.getCanvas().exportGameBoardImage(fileName);
         }
     }

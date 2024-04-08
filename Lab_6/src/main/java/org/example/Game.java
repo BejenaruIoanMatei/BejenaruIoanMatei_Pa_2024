@@ -11,14 +11,14 @@ public class Game implements Serializable {
     private int rows;
     private int cols;
     private List<Stone> stones;
-    private Color turn; // Red or Blue
+    private Color turn; // Rosu sau albastru
     private boolean gameOver;
 
     public Game(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
         this.stones = new ArrayList<>();
-        this.turn = Color.RED; // Red starts the game
+        this.turn = Color.RED; // Incepe albastru ca i culoarea mea preferata :))
         this.gameOver = false;
     }
 
@@ -31,15 +31,13 @@ public class Game implements Serializable {
         for (int i = 0; i < rows * cols; i++) {
             int row = random.nextInt(rows);
             int col = random.nextInt(cols);
-            Color color = (random.nextBoolean()) ? Color.RED : Color.BLUE; // Alternăm între roșu și albastru
+            Color color = (random.nextBoolean()) ? Color.RED : Color.BLUE;
             stones.add(new Stone(row, col, color));
         }
     }
 
     public boolean isValidMove(int row, int col) {
-        // Check if the move is valid according to the game rules
-        // Implement your validation logic here
-        return true; // Placeholder, modify as needed
+        return true;
     }
 
     public void makeMove(int row, int col) {
@@ -56,8 +54,7 @@ public class Game implements Serializable {
     }
 
     private void checkWinner() {
-        // Check if there is a winner
-        // Implement your win condition logic here
+        // Aici ar trebui sa vina logica pentru castigator
     }
 
     public List<Stone> getStones() {

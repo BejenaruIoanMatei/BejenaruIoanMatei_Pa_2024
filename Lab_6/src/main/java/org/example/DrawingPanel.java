@@ -17,7 +17,7 @@ public class DrawingPanel extends JPanel {
     private final int stoneSize = 20;
     private boolean isPlayer1Turn = true;
 
-    private List<Stone> stones = new ArrayList<>(); // Keep track of stones placed on the board
+    private List<Stone> stones = new ArrayList<>();
 
     public DrawingPanel(int initialRows, int initialCols) {
         this.rows = initialRows;
@@ -38,13 +38,10 @@ public class DrawingPanel extends JPanel {
 
                 Color stoneColor = isPlayer1Turn ? Color.BLUE : Color.RED;
 
-                // Add the stone to the list
                 stones.add(new Stone(centerX - stoneSize / 2, centerY - stoneSize / 2, stoneColor));
 
-                // Repaint the panel to reflect the changes
                 repaint();
 
-                // Save the updated image
                 exportGameBoardImage("board.png");
 
                 isPlayer1Turn = !isPlayer1Turn;
@@ -103,7 +100,7 @@ public class DrawingPanel extends JPanel {
     public void exportGameBoardImage(String fileName) {
         BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = image.createGraphics();
-        paintComponent(g2d); // Paint the board with stones on the BufferedImage
+        paintComponent(g2d);
         g2d.dispose();
 
         File outputFile = new File(fileName);

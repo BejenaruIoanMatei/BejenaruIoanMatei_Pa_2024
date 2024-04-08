@@ -7,7 +7,7 @@ public class MainFrame extends JFrame {
     protected ConfigPanel configPanel;
     private ControlPanel controlPanel;
     private DrawingPanel canvas;
-    private Game game; // Adăugăm instanța clasei Game
+    private Game game;
 
     public MainFrame() {
         super("Positional Game");
@@ -18,25 +18,23 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Creăm o instanță a jocului cu o anumită dimensiune a tablei
         game = new Game(5, 5);
-        game.initialize(); // Inițializăm jocul
+        game.initialize();
 
         canvas = new DrawingPanel(5, 5);
         controlPanel = new ControlPanel(this);
         configPanel = new ConfigPanel(this);
 
-        // Adăugăm un MouseListener pentru a permite plasarea pietrelor pe tablă
-        canvas.addMouseListener(new java.awt.event.MouseAdapter() {
+        canvas.addMouseListener(new java.awt.event.MouseAdapter() {//Asta e pentru plasarea pietrelor
+                                                                    // pe tabela
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 int col = evt.getX() / canvas.getCellWidth();
                 int row = evt.getY() / canvas.getCellHeight();
-                game.makeMove(row, col); // Facem mutarea în joc
-                canvas.repaint(); // Repictăm tabla după mutare
+                game.makeMove(row, col); // Facem mutarea in joc
+                canvas.repaint(); // Refacem tabela dupa fieacare mutare
             }
         });
 
-        // Adăugăm canvas-ul pe panel-ul central
         JPanel centerPanel = new JPanel(new GridBagLayout());
         centerPanel.add(canvas);
 
@@ -45,7 +43,8 @@ public class MainFrame extends JFrame {
         add(controlPanel, BorderLayout.SOUTH);
 
         pack();
-        setLocationRelativeTo(null); // Centrăm fereastra pe ecran
+        //Asta i pentru a centra fereastra pe ecran
+        setLocationRelativeTo(null);
     }
 
     public Game getGame() {

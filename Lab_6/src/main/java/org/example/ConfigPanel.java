@@ -28,7 +28,7 @@ public class ConfigPanel extends JPanel {
         add(colsLabel);
         add(colsSpinner);
 
-        // Adăugăm un ChangeListener pentru a detecta schimbările și a actualiza DrawingPanel
+        // Pentru a detecta schimbarile si pt a actualiza Drawing Panel ul
         rowsSpinner.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
