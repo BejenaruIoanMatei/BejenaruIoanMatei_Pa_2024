@@ -30,7 +30,7 @@ public class Player implements Runnable {
 
     @Override
     public void run() {
-        while (playerRunning) {
+        while (playerRunning&&game.gameRunning) {
             List<Tile> tiles = game.getBag().extractTiles(2);
             if (tiles.isEmpty()) {
                 playerRunning = false;
@@ -65,5 +65,8 @@ public class Player implements Runnable {
 
     public int getPoints() {
         return points;
+    }
+    public void stopPlayer() {
+        playerRunning = false;
     }
 }

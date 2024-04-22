@@ -11,6 +11,18 @@ public class Game {
     private List<Player> players = new ArrayList<>();
     private int currentPlayerIndex = 0;
     private final Object turnLock = new Object();
+    volatile boolean gameRunning = true;
+
+    public void stopGame() {
+        gameRunning = false;
+        synchronized (turnLock) {
+            turnLock.notifyAll();
+        }
+        for (Player player : players) {
+            player.stopPlayer();
+        }
+        //System.out.println("Game : Time limit exceeded.");
+    }
 
     public Game() {
         this.bag = new Bag(5);
@@ -24,6 +36,11 @@ public class Game {
 
     public void play() {
         List<Thread> playerThreads = new ArrayList<>();
+
+        Thread timekeeperThread = new Thread(new Timekeeper(this, 10000)); // 1 minute time limit
+        timekeeperThread.setDaemon(true);
+        timekeeperThread.start();
+
         for (Player player : players) {
             Thread playerThread = new Thread(player);
             playerThreads.add(playerThread);
@@ -31,7 +48,7 @@ public class Game {
         }
         for (Thread playerThread : playerThreads) {
             try {
-                playerThread.join(); // Wait for all player threads to finish
+                playerThread.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -67,4 +84,6 @@ public class Game {
     public Player getCurrentPlayer() {
         return players.get(currentPlayerIndex);
     }
+
+
 }
