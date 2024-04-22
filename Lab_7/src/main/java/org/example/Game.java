@@ -2,17 +2,19 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Game
-{
+public class Game {
     private Bag bag;
     private List<Player> players = new ArrayList<>();
+    private int currentPlayerIndex = 0;
+    private final Object turnLock = new Object();
 
     public Game() {
         this.bag = new Bag(5);
-        //Placile o sa contina numere din interv 1-5
+        // Placile o sa contina numere din intervalul 1-5
     }
 
     public void addPlayer(Player player) {
@@ -39,8 +41,6 @@ public class Game
         System.out.println("Winner is: " + winner.getName() + " with " + winner.getPoints() + " points.");
     }
 
-
-
     public Bag getBag() {
         return bag;
     }
@@ -55,4 +55,16 @@ public class Game
         return winner;
     }
 
+    //am folosit turnLock pentru a sincroniza jucatorii
+    //fiecare jucator isi asteapta randul pentru a extrage din punga
+    public void nextPlayerTurn() {
+        synchronized (turnLock) {
+            currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
+            turnLock.notifyAll();
+        }
+    }
+
+    public Player getCurrentPlayer() {
+        return players.get(currentPlayerIndex);
+    }
 }
