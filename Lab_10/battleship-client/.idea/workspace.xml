@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beb839e5-8497-4cb4-ade9-cc17cb12329b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/ClientThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../battleship-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../battleship-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715612607781</updated>
       <workItem from="1715612608832" duration="9000" />
-      <workItem from="1715618170310" duration="709000" />
+      <workItem from="1715618170310" duration="1029000" />
     </task>
     <servers />
   </component>
