@@ -4,18 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beb839e5-8497-4cb4-ade9-cc17cb12329b" name="Changes" comment="" />
+    <list default="true" id="beb839e5-8497-4cb4-ade9-cc17cb12329b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/ClientThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battleship-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battleship-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BejenaruIoanMatei"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/BejenaruIoanMatei/BejenaruIoanMatei_Pa_2024.git",
+    "accountId": "b414d4bd-10c3-4388-9db2-81b10a5e2227"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2gPwdGHdH1eWOxXzeiaZj3SDT1X" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,9 +49,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GameClient.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/user/Documents/GitHub/BejenaruIoanMatei_Pa_2024/Lab_10/battleship-client/src/main/java/org/example/Main.java",
     "vue.rearranger.settings.migration": "true"
@@ -48,21 +79,11 @@
       <option name="presentableId" value="Default" />
       <updated>1715612607781</updated>
       <workItem from="1715612608832" duration="9000" />
+      <workItem from="1715618170310" duration="709000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
