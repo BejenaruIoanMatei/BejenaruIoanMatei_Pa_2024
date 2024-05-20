@@ -12,6 +12,8 @@ public class Game {
     private final GameBoard board2;
     private boolean gameStarted;
     private String currentPlayer;
+    private long moveStartTime;
+    private final long blitzTime = 100000; // partea de time limit
 
     public Game() {
         this.id = ID_GENERATOR.getAndIncrement();
@@ -29,7 +31,7 @@ public class Game {
         if (players.size() >= 2 || gameStarted) {
             return false;
         }
-        Player player = new Player(playerName);
+        Player player = new Player(playerName, blitzTime);
         players.put(playerName, player);
         if (players.size() == 1) {
             currentPlayer = playerName;
@@ -40,6 +42,7 @@ public class Game {
     public boolean startGame() {
         if (players.size() == 2) {
             gameStarted = true;
+            moveStartTime = System.currentTimeMillis();
             return true;
         }
         return false;
@@ -57,16 +60,32 @@ public class Game {
             return "Not your turn";
         }
 
+        long currentTime = System.currentTimeMillis();
+        Player currentPlayerObj = players.get(currentPlayer);
+
+        // calculez timpul pentru fiecare miscare
+        long timeSpent = currentTime - moveStartTime;
+        currentPlayerObj.decrementTime(timeSpent);
+
+        //vad daca jucatorul mai are timp ramas
+        if (!currentPlayerObj.hasTimeLeft()) {
+            gameStarted = false;
+            return currentPlayer + " has run out of time and lost the game.";
+        }
+
         GameBoard board = playerName.equals(players.keySet().toArray()[0]) ? board2 : board1;
         String result = board.receiveMove(x, y);
 
-        // Switch turn to the other player
+        //switch la player
         currentPlayer = playerName.equals(players.keySet().toArray()[0]) ? (String) players.keySet().toArray()[1] : (String) players.keySet().toArray()[0];
+        moveStartTime = System.currentTimeMillis();
 
-        return result;
+        return result + ". Remaining time: " + currentPlayerObj.getRemainingTime() / 1000 + " seconds.";
     }
 
     public void printBoards() {
+        //pentru a testa daca functioneza :)))
+        //printez in server tablele fiecarui jucator ca sa vad exact cum pot da un hit :)
         System.out.println("Board for Player 1:");
         board1.printBoard();
         System.out.println("Board for Player 2:");

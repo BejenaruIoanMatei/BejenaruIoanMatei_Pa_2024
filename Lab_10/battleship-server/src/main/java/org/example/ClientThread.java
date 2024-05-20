@@ -82,7 +82,7 @@ public class ClientThread extends Thread {
                     return moveGame.submitMove(movePlayerName, x, y);
                 }
                 return "Game not found";
-            case "print":
+            case "print": //neaparat print id , unde id este id ul de la joc
                 int printGameId = Integer.parseInt(parts[1]);
                 Game printGame = server.getGame(printGameId);
                 if (printGame != null) {

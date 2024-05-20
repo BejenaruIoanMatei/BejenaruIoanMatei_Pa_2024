@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beb839e5-8497-4cb4-ade9-cc17cb12329b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/GameBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../battleship-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/ClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-server/src/main/java/org/example/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       <workItem from="1715618170310" duration="2724000" />
       <workItem from="1716214342857" duration="416000" />
       <workItem from="1716214916479" duration="7000" />
-      <workItem from="1716215084590" duration="1833000" />
+      <workItem from="1716215084590" duration="3077000" />
     </task>
     <servers />
   </component>

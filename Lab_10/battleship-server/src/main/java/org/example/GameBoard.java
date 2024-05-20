@@ -5,6 +5,7 @@ import java.util.Random;
 public class GameBoard {
     private final char[][] board;
 
+    //tabla de 10 pe 10
     public GameBoard() {
         board = new char[10][10];
         for (int i = 0; i < 10; i++) {
@@ -15,11 +16,13 @@ public class GameBoard {
         placeShips();
     }
 
-    // Place ships randomly on the board for testing purposes
+    //partea de plasat barci o fac random ca sa nu dureze prea mult jocul
     private void placeShips() {
         Random random = new Random();
         int shipsPlaced = 0;
-        while (shipsPlaced < 5) {  // Place 5 ships for simplicity
+        while (shipsPlaced < 5)
+        {
+
             int x = random.nextInt(10);
             int y = random.nextInt(10);
             if (board[x][y] == '~') {
@@ -29,15 +32,17 @@ public class GameBoard {
         }
     }
 
+
+    //partea de hit n miss
     public String receiveMove(int x, int y) {
         if (board[x][y] == '~') {
-            board[x][y] = 'M';  // Miss
+            board[x][y] = 'M';
             return "Miss";
         } else if (board[x][y] == 'S') {
-            board[x][y] = 'H';  // Hit
+            board[x][y] = 'H';
             return "Hit";
         }
-        return "Already hit this spot";
+        return "Already hit this spot"; // asta daca faci o mutare pe acelasi loc
     }
 
     public void printBoard() {
