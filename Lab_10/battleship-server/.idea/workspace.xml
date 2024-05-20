@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c14300a-7c4a-4842-b4ba-809b05c0ab5a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../battleship-client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="8c14300a-7c4a-4842-b4ba-809b05c0ab5a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +78,7 @@
       <workItem from="1716214327372" duration="14000" />
       <workItem from="1716214353547" duration="411000" />
       <workItem from="1716214924479" duration="8000" />
-      <workItem from="1716214944981" duration="3198000" />
+      <workItem from="1716214944981" duration="3249000" />
     </task>
     <servers />
   </component>
