@@ -3,31 +3,31 @@ package org.example;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GameServer {
     private ServerSocket serverSocket;
     private boolean running;
+    private Map<Integer, Game> games;
 
-    // partea de server cu ServerSocket
     public GameServer(int port) {
         try {
             serverSocket = new ServerSocket(port);
             System.out.println("Server started on port " + port);
             running = true;
+            games = new HashMap<>();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    //partea de thread uri pentru fiecare client separat
     public void start() {
         while (running) {
             try {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("New client connected: " + clientSocket.getInetAddress().getHostAddress());
-
-                // aici se face thread ul
-                ClientThread clientThread = new ClientThread(clientSocket);
+                ClientThread clientThread = new ClientThread(clientSocket, this);
                 clientThread.start();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -43,6 +43,16 @@ public class GameServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public synchronized int createGame() {
+        Game game = new Game();
+        games.put(game.getId(), game);
+        return game.getId();
+    }
+
+    public synchronized Game getGame(int gameId) {
+        return games.get(gameId);
     }
 
     public static void main(String[] args) {
