@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c14300a-7c4a-4842-b4ba-809b05c0ab5a" name="Changes" comment="" />
+    <list default="true" id="8c14300a-7c4a-4842-b4ba-809b05c0ab5a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../battleship-client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../battleship-client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +82,8 @@
       <workItem from="1716214353547" duration="411000" />
       <workItem from="1716214924479" duration="8000" />
       <workItem from="1716214944981" duration="3249000" />
+      <workItem from="1716220992299" duration="142000" />
+      <workItem from="1716237780841" duration="1252000" />
     </task>
     <servers />
   </component>
